@@ -1,0 +1,293 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+section {
+  width: calc(100vw);
+  height: calc(100vh);
+}
+
+.modal--container {
+  height: 400px;
+  width: 700px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.modal--content {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 38px 0 rgba(0,0,0,0.53);
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation {
+  left: 45%;
+  bottom: -50px;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  box-shadow: 0 0 38px 0 rgba(0,0,0,0.53);
+  transform: translateY(-30px);
+  opacity: 0;
+  animation: navigation--animation 0.5s 1s ease forwards;
+  transition: 0.5s;
+}
+
+.navigation .navigation--image {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navigation .previous {
+  left: 0;
+}
+
+.navigation .previous:hover {
+  transform: translateX(-2px);
+}
+
+.navigation .next {
+  right: 0;
+}
+
+.navigation .next:hover {
+  transform: translateX(2px);
+}
+
+.content--view--one {
+  background: #ff3636;
+}
+
+.content--view--one .main--color {
+  background: #ff3636;
+}
+
+.content--view--two {
+  background: #66dd66;
+}
+
+.content--view--two .main--color {
+  background: #66dd66;
+}
+
+.content--view--three {
+  background: #3636dd;
+}
+
+.content--view--three .main--color {
+  background: #3636dd;
+}
+
+.content--view--four {
+  background: #f5f544;
+}
+
+.content--view--four .main--color {
+  background: #f5f544;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 30px 140px 40px 50px;
+  color: #fff;
+  background: #ccc;
+}
+
+.content h1 {
+  padding-top: 20px;
+  font-family: 'Caesar Dressing';
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: bottom--text--animation 1s 0.6s forwards;
+  transition: 0.5s;
+}
+
+.content p {
+  font-family: 'Open Sans Condensed';
+  font-size: 18px;
+  padding-top: 30px;
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: bottom--text--animation 1s 0.9s forwards;
+  transition: 0.5s;
+}
+
+.circle--container {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -150px;
+  right: -150px;
+  z-index: 10;
+  animation: main-circ 6s ease forwards infinite;
+  transition: 0.5s;
+}
+
+.circle--container > div {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.circle--one {
+  width: 100px;
+  height: 100px;
+  animation: circle--scaling ease 0.6s forwards;
+}
+
+.circle--two {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  animation: circle--scaling ease 0.6s 0.2s forwards;
+}
+
+.circle--three {
+  width: 300px;
+  height: 300px;
+  animation: circle--scaling ease 0.6s 0.4s forwards;
+}
+
+.content--text {
+  transition: 0.4s;
+}
+
+body .fade--out .content--text {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+body .fade--out .circle--container {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+@-moz-keyframes bottom--text--animation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes bottom--text--animation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes bottom--text--animation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bottom--text--animation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes circle--scaling {
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes circle--scaling {
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-o-keyframes circle--scaling {
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes circle--scaling {
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes navigation--animation {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes navigation--animation {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes navigation--animation {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes navigation--animation {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}

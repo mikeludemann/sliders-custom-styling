@@ -1,0 +1,204 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: #fff;
+	background: #bbb;
+}
+
+li {
+	list-style: none;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.slider--container {
+	position: relative;
+	width: 80%;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+.slider--element {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 1rem 3rem;
+	opacity: 0;
+	visibility: hidden;
+	transform-origin: right center;
+	transform: translate3d(0%, 0%, 0) rotateY(30deg) scaleX(0.95);
+	transition: all 1s ease,transform 1s cubic-bezier(0.43, 0.28, 0.51, 1);
+}
+
+#slider--one:checked ~ .slider--container .slider--element.image--one,
+#slider--two:checked ~ .slider--container .slider--element.image--two,
+#slider--three:checked ~ .slider--container .slider--element.image--three {
+	opacity: 1;
+	visibility: visible;
+	transform-origin: left center;
+	transform: translate3d(0, 0, 0) rotateY(0deg) scaleX(1);
+}
+
+.slider--image {
+	width: 100%;
+	height: 60%;
+	position: relative;
+	overflow: hidden;
+}
+
+.image--full--width {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	height: auto;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.image--full--height {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: 90%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+figcaption {
+	display: block;
+}
+
+.image--headline {
+	margin-top: 6rem;
+	margin-bottom: 2rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid #00e632;
+}
+
+.image--headline--main {
+	display: inline-block;
+	color: #eee;
+	background-color: rgb(0, 230, 50, 0.5);
+	line-height: 1;
+	padding: 0.5em 0.9em;
+	margin-right: 0.5em;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+.small--view {
+	display: none;
+}
+
+.slider--navigation {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+  transform: translate3d(0, -50%, 0);
+}
+
+.slider--navigation--element.prev {
+	left: 0;
+	border-radius: 50px 0px 0px 50px;
+}
+
+.slider--navigation--element.next {
+	right: 0;
+	transform: rotateY(180deg);
+	border-radius: 50px 0px 0px 50px;
+}
+
+.slider--navigation--element {
+	position: absolute;
+	display: none;
+	width: 4rem;
+	height: 4rem;
+	border: 3px solid #00e632;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.slider--navigation--element:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 1rem;
+	top: 55%;
+	height: 3px;
+	background-color: #00e632;
+	transform-origin: left bottom;
+	transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.slider--navigation--element:hover {
+	transform: translate3d(-30%, 0, 0);
+}
+
+.slider--navigation--element.next:hover {
+	transform: rotateY(180deg) translate3d(-30%, 0, 0);
+}
+
+.slider--navigation--element:after {
+	content: "";
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	width: 2rem;
+	height: 3px;
+	background-color: #00e632;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#slider--one:checked ~ .slider--container .slider--navigation .slider--navigation--one,
+#slider--two:checked ~ .slider--container .slider--navigation .slider--navigation--two,
+#slider--three:checked ~ .slider--container .slider--navigation .slider--navigation--three {
+	display: block;
+}
+
+.slider--navigation--indicator {
+	position: absolute;
+	left: 0;
+	top: 63%;
+	width: 100%;
+	text-align: center;
+}
+
+.slider--container--indicator {
+	position: relative;
+	display: inline-block;
+	padding: 2rem;
+	cursor: pointer;
+}
+
+.slider--container--indicator:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 1rem;
+	background: #00e632;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.slider--container--indicator:hover:after {
+	transform: translate3d(-50%, -50%, 0) scale(1.5);
+	transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#slider--one:checked ~ .slider--container .slider--navigation--indicator .indicator--one:after,
+#slider--two:checked ~ .slider--container .slider--navigation--indicator .indicator--two:after,
+#slider--three:checked ~ .slider--container .slider--navigation--indicator .indicator--three:after {
+	transform: translate3d(-50%, -50%, 0) scale(2.5);
+}

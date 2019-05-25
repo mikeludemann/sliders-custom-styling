@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<section>
+		<input type="radio" id="slider--one" name="slider--control" checked="checked">
+    <input type="radio" id="slider--two" name="slider--control">
+    <input type="radio" id="slider--three" name="slider--control">
+    <div class="slider--container">
+      <figure class="slider--element image--one">
+        <div class="slider--image">
+          <img class="image--full--width" src="./images/Kölner_Dom.jpg" alt="Cologne Cathedral">
+        </div>
+        <figcaption class="image--information">
+          <h3 class="image--headline">
+            <div class="image--headline--main">Cologne</div>
+            <br class="small--view main--view">
+            Cologne Cathedral
+          </h3>
+          <ul class="image--credentials">
+            <li>(1225 - Today)</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <figure class="slider--element image--two">
+        <div class="slider--image">
+          <img class="image--full--height" src="./images/München_Schloss_Neuschwanstein.jpg" alt="Castle Neuschwanstein">
+        </div>
+        <figcaption class="image--information">
+          <h3 class="image--headline">
+            <div class="image--headline--main">Munich</div>
+            <br class="small--view main--view">
+            Castle Neuschwanstein
+          </h3>
+          <ul class="image--credentials">
+            <li>(1869 - 1886)</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <figure class="slider--element image--three">
+        <div class="slider--image">
+          <img class="image--full--height" src="./images/Berlin_Brandenburger_Tor.jpg" alt="Brandenburg Gate">
+        </div>
+        <figcaption class="image--information">
+          <h3 class="image--headline">
+            <div class="image--headline--main">Berlin</div>
+            <br class="small--view main--view">
+            Brandenburg Gate
+          </h3>
+          <ul class="image--credentials">
+            <li>(1670)</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <div class="slider--navigation">
+        <label class="slider--navigation--element slider--navigation--one prev" for="slider--three"></label>
+        <label class="slider--navigation--element slider--navigation--one next" for="slider--two"></label>
+        <label class="slider--navigation--element slider--navigation--two prev" for="slider--one"></label>
+        <label class="slider--navigation--element slider--navigation--two next" for="slider--three"></label>
+        <label class="slider--navigation--element slider--navigation--three prev" for="slider--two"></label>
+        <label class="slider--navigation--element slider--navigation--three next" for="slider--one"></label>
+      </div>
+      <div class="slider--navigation--indicator">
+        <div class="slider--container--indicator indicator--one"></div>
+        <div class="slider--container--indicator indicator--two"></div>
+        <div class="slider--container--indicator indicator--three"></div>
+      </div>
+    </div>
+	</section>
+</body>
+</html>
